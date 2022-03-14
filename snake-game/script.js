@@ -213,7 +213,7 @@ function createWall() {
     }
 }
 
-//drawSnake use to display snake on canvas
+//drwaSnake use to display snake on canvas
 function drawSnake(ctx, snake) {
     ctx.fillStyles = snake.color;
     
