@@ -530,3 +530,5 @@ function initGame() {
 
 //play game
 initGame();
+
+
