@@ -160,7 +160,60 @@ function drawLife(ctx, lifes) {
         );
 }
 
-//drwaSnake use to display snake on canvas
+//function initWall display on level 2
+function initWall2() {
+    for (let i = 0; i < wall2.length; i++){
+        for (let j = wall2[i].x1; j <= wall2[i].x2; j++) {
+            wallX.push(j);
+            wallY.push(wall2[i].y);
+        }
+    }
+}
+
+//function initWall display on level 3
+function initWall3() {
+    for (let i = 0; i < wall3.length; i++){
+        for (let j = wall3[i].x1; j <= wall3[i].x2; j++) {
+            wallX.push(j);
+            wallY.push(wall3[i].y);
+        }
+    }
+}
+
+//function initWall display on level 4
+function initWall4() {
+    for (let i = 0; i < wall4.length; i++){
+        for (let j = wall4[i].x1; j <= wall4[i].x2; j++) {
+            wallX.push(j);
+            wallY.push(wall4[i].y);
+        }
+    }
+}
+
+//function initWall display on level 5
+function initWall5() {
+    for (let i = 0; i < wall5.length; i++){
+        for (let j = wall5[i].y1; j <= wall5[i].y2; j++) {
+            wallY.push(j);
+            wallX.push(wall5[i].x);
+        }
+    }
+}
+
+//draw the Wall
+function createWall() {
+    let wallCanvas = document.getElementById("snakeBoard");
+    let ctx = wallCanvas.getContext("2d");
+    imgTrap = new Image();
+    var i = 0;
+    while(i < wallX.length){
+        imgTrap.src = 'assets/bush2.png';
+        ctx.drawImage(imgTrap, wallX[i] * CELL_SIZE, wallY[i] * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+        i++;
+    }
+}
+
+//drawSnake use to display snake on canvas
 function drawSnake(ctx, snake) {
     ctx.fillStyles = snake.color;
     
@@ -477,4 +530,3 @@ function initGame() {
 
 //play game
 initGame();
-
