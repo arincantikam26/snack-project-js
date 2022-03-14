@@ -160,7 +160,8 @@ function drawLife(ctx, lifes) {
         );
 }
 
-//drwaSnake use to display snake on canvas
+
+//drawSnake use to display snake on canvas
 function drawSnake(ctx, snake) {
     ctx.fillStyles = snake.color;
     
@@ -477,4 +478,3 @@ function initGame() {
 
 //play game
 initGame();
-
