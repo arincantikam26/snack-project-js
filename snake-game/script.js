@@ -38,6 +38,7 @@ function initSnake(color) {
         direction: initDirection(),
         score: 0,
         life: 3,
+
     }
 }
 
@@ -102,6 +103,25 @@ function drawSnake(ctx, snake){
         ctx.drawImage(img, snake.body[i].x * CELL_SIZE, snake.body[i].y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
         // drawCell(ctx, snake.body[i].x, snake.body[i].y, snake.color);
     }
+}
+
+function draw() {
+    setInterval(function() {
+        let snakeCanvas = document.getElementById("snakeBoard");
+        let ctx = snakeCanvas.getContext("2d");
+
+        ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
+        
+        //draw snake
+        drawSnake(ctx, snake1);
+        
+        //add image apple
+        let imgApple = document.getElementById("apple")
+        ctx.drawImage(imgApple, apple1.position.x * CELL_SIZE, apple1.position.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+        ctx.drawImage(imgApple, apple2.position.x * CELL_SIZE, apple2.position.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+
+        drawScore(snake1);
+    }, REDRAW_INTERVAL);
 }
 
 function teleport(snake) {
@@ -171,8 +191,6 @@ function draw() {
             drawLifeBonus(ctx, life);
            
         }
-
-    
         drawScore(snake1);
     }, REDRAW_INTERVAL);
 }
@@ -197,6 +215,7 @@ function eat(snake, apple1, apple2, life) {
         life.position = initPosition();
         snake.life++;
     }
+
 }
 
 function moveLeft(snake) {
