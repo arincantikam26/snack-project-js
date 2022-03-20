@@ -4,7 +4,7 @@
 <img src="https://github.com/rg-km/se-be4-kelompok5/blob/main/capture.png">
 
 ## Play
-- Play the game here : [https://rg-km.github.io/se-be4-kelompok5/]
+- Play the game here : https://rg-km.github.io/se-be4-kelompok5/
 
 ## Team
 | Nama | Role | Profile |
