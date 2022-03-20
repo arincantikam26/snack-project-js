@@ -124,7 +124,7 @@ function drawLife(ctx, snake) {
 }
 
 function drawLifeBonus(ctx, life) {
-    let img = document.getElementById("life");
+    let img = document.getElementById("life_blue");
     ctx.drawImage(img, life.position.x * CELL_SIZE, life.position.y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
 }
 /* HEALTH - END */
