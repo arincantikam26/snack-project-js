@@ -10,6 +10,7 @@ const DIRECTION = {
     DOWN: 3,
 }
 const MOVE_INTERVAL = 150;
+var SPEED = MOVE_INTERVAL;
 
 function initPosition() {
     return {
@@ -201,7 +202,7 @@ function draw() {
 
         //draw level
         document.getElementById("level").innerHTML = "Level Snake: " + snake1.level;
-        document.getElementById("speed").innerHTML = "Speed : " + MOVE_INTERVAL + " ms";
+        document.getElementById("speed").innerHTML = "Speed : " + SPEED + " ms";
 
         drawScore(snake1);
         
@@ -247,6 +248,7 @@ function level(snake) {
                 drawWall(wall1, wall2, 4);
             }
             snake.level++;
+            SPEED -= 20;
             document.getElementById("levelUp").innerHTML = "LEVEL UP";
             setTimeout(function (){
                document.getElementById("levelUp").innerHTML = "";
@@ -331,14 +333,14 @@ function move(snake) {
     if (!checkCollision([snake1])) {
         setTimeout(function() {
             move(snake);
-        }, MOVE_INTERVAL);
+        }, SPEED);
     } else {
         console.log("collide", snake.color);
         if (snake == snake1) {
             snake1 = initSnake("purple");
             setTimeout(function() {
                 move(snake1);
-            }, MOVE_INTERVAL);
+            }, SPEED);
         }
     }
 }
